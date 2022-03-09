@@ -11,7 +11,7 @@ app = Flask(__name__)
 def download():
     url = "https://kandaweather-mainnet.ddns.net/v1/chain/get_table_rows"
     HEADER = {"content-type": "application/json", "Accept-Charset": "UTF-8"}
-    DATA = "{\"code\":\"dclimateiot4\",\"table\":\"weather\",\"scope\":\"dclimateiot4\",\"index_position\":\"first\",\"json\":\"true\"}"
+    DATA = "{\"code\":\"dclimateiot4\",\"table\":\"weather\",\"scope\":\"dclimateiot4\",\"index_position\":\"first\",\"json\":\"true\",\"limit\":100}"
     res = requests.post(url, headers = HEADER, data = DATA)
     response_json = json.loads(res.text)
     return response_json
